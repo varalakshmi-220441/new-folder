@@ -3,15 +3,13 @@ body {
     font-family: Arial;
     height: 300cm;
 }
-
 /* SIDEBAR */
 .sidebar {
-    position: fixed;
+    position:fixed;
     top: 0;
     left: 0;
     width: 250px;
     height: 100vh;
-
     background-color: #111;
     color: white;
     padding: 20px;
