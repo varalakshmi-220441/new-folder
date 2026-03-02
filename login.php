@@ -1,21 +1,21 @@
-<?php
-include "db.php";
-if (!isset($_POST['username'], $_POST['password'])) {
-    die("Please submit the login form.");
-}
-function validateLogin($connection){
-    $username=$_POST['username'];
-    $password=$_POST['password'];
-    $sql="select * from users where username='$username' and password='$password'";
-    $result=mysqli_query($connection,$sql);
-    if(!$result){
-        die("Query failed");
-    }
-            if(mysqli_num_rows($result)>0){
-            print "Login Succssful";
-        }else{
-            print "Invalid Login";
-        }
-    }
-validateLogin($connection);
-?>
+<?php 
+session_start(); 
+require __DIR__ . '/config/db.php'; 
+$email = $_POST['email'] ?? ''; 
+$password = $_POST['password'] ?? ''; 
+if (!$email || !$password) { 
+die("Email and password are required."); 
+} 
+// Find user 
+$user = $users->findOne(['email' => $email]); 
+if (!$user) { 
+die("User not found. <a href='index.html'>Go back</a>"); 
+} 
+// Verify password 
+if (!password_verify($password, $user['password'])) { 
+die("Invalid password. <a href='index.html'>Go back</a>"); 
+} 
+// Login success 
+$_SESSION['user'] = $user['email']; 
+header("Location: dashboard.php"); 
+exit;

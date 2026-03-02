@@ -1,17 +1,25 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Multimedia Demo</title>
-    </head>
-    <body>
-        <h1>Multimedia Eample</h1>
-        <h2>Image</h2>
-        <img src="style.jpg" alt="Sample Image" width="300">
-        <h2>Audio</h2>
-        <audio controls><source src="audio.mp3" type="audio"></audio>
-        <h2>Video</h2>
-        <video width="400" controls>
-            <source src="dance.mp4" type="video/mp4">
-        </video>
-    </body>
+<!DOCTYPE html> 
+<html> 
+<head> 
+<title>Login & Signup</title> 
+</head> 
+<body> 
+<h2>Signup</h2> 
+<form action="signup.php" method="POST"> 
+<input type="email" name="email" placeholder="Email" 
+required><br><br> 
+<input type="password" name="password" placeholder="Password" 
+required><br><br> 
+<button type="submit">Signup</button> 
+</form> 
+<hr> 
+<h2>Login</h2> 
+<form action="login.php" method="POST"> 
+<input type="email" name="email" placeholder="Email" 
+required><br><br> 
+<input type="password" name="password" placeholder="Password" 
+required><br><br> 
+<button type="submit">Login</button> 
+</form> 
+</body> 
 </html>
